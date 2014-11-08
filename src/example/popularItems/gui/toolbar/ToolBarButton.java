@@ -1,7 +1,6 @@
 package example.popularItems.gui.toolbar;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import javax.swing.*;
@@ -29,7 +28,7 @@ public class ToolBarButton extends JButton {
 	}
 
 	public ToolBarButton(String imageFile) throws IOException {
-			this(new ImageIcon(ImageIO.read(ToolBarButton.class.getResource(imageFile))));
+		this(new ImageIcon(ImageIO.read(ToolBarButton.class.getResource(imageFile))));
 		//this(new ImageIcon(imageFile));
 	}
 

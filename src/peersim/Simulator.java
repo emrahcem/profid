@@ -19,6 +19,8 @@
 package peersim;
 
 import java.io.*;
+
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 import example.popularItems.UserInputs;
@@ -173,15 +175,12 @@ public class Simulator implements Runnable {
 		else if (UserInputs.runFromManualConfig) {
 			UserInputs.createSimFolder();
 			if (Configuration.contains("init.fromFile")) {
-				copyfile(UserInputs.configFile.getParent() + File.separator
-						+ Configuration.getString("init.fromFile.file"),
+				copyfile(Configuration.getString("init.fromFile.file"),
 						UserInputs.DESTINATIONFOLDER + File.separator
 								+ "neighborList.txt");
-				System.err.println("Copy from:" + UserInputs.configFile.getParent()
-						+ File.separator
-						+ Configuration.getString("init.fromFile.file")
-						+ "  to:" + UserInputs.DESTINATIONFOLDER
-						+ File.separator + "neighborList.txt");
+				//System.err.println("Copy from:" + Configuration.getString("init.fromFile.file")
+				//		+ "  to:" + UserInputs.DESTINATIONFOLDER
+				//		+ File.separator + "neighborList.txt");
 			}
 		}
 

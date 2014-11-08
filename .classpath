@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="profid.jar"/>
 	<classpathentry kind="lib" path="res/affluenza_2.0.jar"/>
 	<classpathentry kind="lib" path="res/colt.jar"/>
 	<classpathentry kind="lib" path="res/djep-1.0.0.jar"/>

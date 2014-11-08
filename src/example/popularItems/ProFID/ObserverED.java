@@ -28,12 +28,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import javax.swing.SwingUtilities;
+
 import example.popularItems.ProFIDState;
 import example.popularItems.UserInputs;
 import example.popularItems.gui.content.ContentPanel;
-
 import peersim.Simulator;
-
 import peersim.config.*;
 import peersim.core.*;
 import peersim.util.IncrementalStats;
@@ -134,16 +134,20 @@ public class ObserverED implements Control {
 	 */
 	public boolean execute() {
 		round++;
-		ContentPanel.console.append("Experiment "
-				+ (Simulator.experimentNo) + ",Round " + round
-				+ "\n");
-		if (CommonState.getPhase() == CommonState.PHASE_UNKNOWN) {
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				
+				ContentPanel.console.append("Experiment "
+						+ (Simulator.experimentNo) + ",Round " + round
+						+ "\n");
 
+			}
+		});
+		if (CommonState.getPhase() == CommonState.PHASE_UNKNOWN) {
 			if (Network.size() == ProFIDState.numberOfConvergedNodes) {
 				return true;
 			}
 		} else if (CommonState.getPhase() == CommonState.POST_SIMULATION) {
-
 			calculateAccuracy();
 			
 //			String filename= UserInputs.DESTINATIONFOLDER+File.separator+"experiment0"+File.separator+"graph00000000.dot";

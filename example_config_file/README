@@ -1,0 +1,8 @@
+ You can run a simulation from a config file rather than choosing inputs using GUI.
+ This may be more convenient to automate the simulation process. 
+ An example config file (configFile.txt) is provided to help the user. 
+ To run the simulation usingthe inputs in configFile.txt, 
+ Choose File -> Simulate From File and choose the configFile.txt. 
+ As the given config file creates the network graph from a file located in ./graph_neighborList.txt
+ it should be in the directory where .jar file exists. If you put the graph_neighborList.txt 
+ to any other directory, you can provide the path to this file in configFile.txt.

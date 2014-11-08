@@ -1,0 +1,136 @@
+SIZE 50
+NUMBEROFEXPERIMENTS 5
+NUMBEROFITEMTYPES 1
+
+ALGORITHM ProFID
+
+ITEMFREQDIST Uniform
+
+DISTTOPEERS Uniform
+
+MINIMUMFREQUENCY 10
+MAXIMUMFREQUENCY 20
+
+CYCLES 600
+CYCLE 1000
+
+MINDELAY 2
+MAXDELAY 100
+
+DROP 0.0
+
+TIMEOUT 300
+
+CONVLIMIT 10
+EPSILON 10
+FANOUT 1
+MMS 100
+THRESHOLD 15
+DELTA 0
+
+simulation.experiments NUMBEROFEXPERIMENTS
+items.maximumFrequency MAXIMUMFREQUENCY
+items.minimumFrequency MINIMUMFREQUENCY
+random.seed 12345
+network.size SIZE
+awarePeers SIZE
+network.numberOfItemTypes NUMBEROFITEMTYPES
+network.node example.popularItems.ProFIDNode
+simulation.endtime CYCLE*CYCLES
+simulation.logtime CYCLE
+
+################### protocols ###############################
+
+protocol.link peersim.core.IdleProtocol
+
+protocol.gossip example.popularItems.ProFID.GossipED
+{
+	linkable link
+	step CYCLE
+	convLimit CONVLIMIT
+	epsilon EPSILON
+	fanout FANOUT
+	mms MMS
+	threshold THRESHOLD
+	delta DELTA
+	timeout TIMEOUT
+	transport tr
+	#writeEnabled
+	}
+
+protocol.urt peersim.transport.UniformRandomTransport
+{
+	mindelay MINDELAY
+	maxdelay MAXDELAY
+}
+
+protocol.tr peersim.transport.UnreliableTransport
+{
+	transport urt
+	drop DROP
+}
+
+################### initialization ########################
+
+init.topo example.popularItems.TopologyInitialization
+{}
+
+init.fromFile peersim.dynamics.WireFromFile
+{
+	file graph_neighborList.txt
+	undir
+	protocol link
+}
+
+init.peers example.popularItems.ProFID.PeerInitializationED
+{
+	protocol gossip
+	protocol2 link
+	itemDistribution ITEMFREQDIST
+	distributionToPeers DISTTOPEERS
+	#writeContent
+}
+
+init.neighbors example.popularItems.CustomGraphPrinter
+{
+	outf neighborList
+	format neighborlist
+	undir
+	protocol link
+	extension .txt
+}
+
+init.visualize example.popularItems.CustomGraphPrinter
+{
+	outf graph
+	format dot
+	undir
+	protocol link
+	extension .dot
+}
+
+init.sch peersim.edsim.CDScheduler
+{
+	protocol gossip
+	randstart
+}
+
+include.init topo fromFile visualize sch peers
+
+################ control #########################
+
+control.observer example.popularItems.ProFID.ObserverED
+{
+	protocol gossip
+	from CYCLE-1
+	step CYCLE
+	FINAL
+}
+
+control.converged example.popularItems.ProFID.ConvergedNodesObserverED
+{
+	protocol gossip
+	from CYCLE-1
+	step CYCLE
+	FINAL
+}

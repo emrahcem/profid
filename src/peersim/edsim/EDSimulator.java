@@ -248,7 +248,6 @@ public static final boolean isConfigurationEventDriven()
  * @return true if the execution should be stopped.
  */
 private static boolean executeNext() {
-
 	PriorityQ.Event ev = heap.removeFirst();
 	if( ev == null )
 	{
@@ -340,7 +339,6 @@ public static void nextExperiment()
 	logtime = Configuration.getLong(PAR_LOGTIME, Long.MAX_VALUE);
 
 	// initialization
-	System.err.println("EDSimulator: resetting");
 	CommonState.setPhase(CommonState.PHASE_UNKNOWN);
 	CommonState.setTime(0); // needed here
 	controls = null;
@@ -363,7 +361,6 @@ public static void nextExperiment()
 	{
 		if( ctrlSchedules[j].fin ) controls[j].execute();
 	}
-
 }
 
 //---------------------------------------------------------------------

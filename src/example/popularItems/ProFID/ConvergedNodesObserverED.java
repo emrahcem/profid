@@ -25,7 +25,6 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 import example.popularItems.UserInputs;
-
 import peersim.Simulator;
 import peersim.config.*;
 import peersim.core.*;
@@ -100,7 +99,6 @@ public class ConvergedNodesObserverED implements Control {
 		numOfConvergedNodesList.add(numOfConvergedNodes);
 		try {
 			if(CommonState.getPhase()==CommonState.POST_SIMULATION){
-
 				FileNameGenerator gen=new FileNameGenerator("convergedNodes",".txt");
 				FileWriter writer=null;
 
@@ -122,7 +120,6 @@ public class ConvergedNodesObserverED implements Control {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 		return false;
 	}
 
