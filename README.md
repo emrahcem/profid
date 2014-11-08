@@ -8,10 +8,10 @@ You will simply run the profid.jar file. You can either double-click the profid.
 
 ``java -jar /path/to/file/profid.jar``
 
-to run the program.
+to run the program. Then, GUI will pop-up and you will be asked to enter the network and protocol parameters. After that, you should click on the run button (green triangle on top).
 
 ###User Interface
 =================
 Interafce consist of two sets of parameters shown as two seperate tabs: 1) Network Parameters 2) ProFID Parameters. For the detailed explanations see the *Help -> How-to* menu.
-[<img src="https://utdallas.edu/~emrah.cem/img/profid/profid_snapshot1.png width="200">](https://utdallas.edu/~emrah.cem)
+[<img src="https://utdallas.edu/~emrah.cem/img/profid/profid_snapshot1.png" width="400">](https://utdallas.edu/~emrah.cem) [<img src="https://utdallas.edu/~emrah.cem/img/profid/profid_snapshot2.png" width="400">](https://utdallas.edu/~emrah.cem)
 
