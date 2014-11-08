@@ -18,5 +18,5 @@ After starting the GUI, you need to enter the simulation parameters. There are t
 =================
 User interface consists of two sets of parameters shown as two seperate tabs: 1) Network Parameters 2) ProFID Parameters. For the detailed explanations of each parameter, see the *Help -> How-to* menu.
 
-[<img src="https://utdallas.edu/~emrah.cem/img/profid/profid_snapshot1.png" width="300">](https://utdallas.edu/~emrah.cem) [<img src="https://utdallas.edu/~emrah.cem/img/profid/profid_snapshot2.png" width="300">](https://utdallas.edu/~emrah.cem)
+[<img src="https://utdallas.edu/~emrah.cem/img/profid/profid_snapshot1.png" width="350">](https://utdallas.edu/~emrah.cem) [<img src="https://utdallas.edu/~emrah.cem/img/profid/profid_snapshot2.png" width="350">](https://utdallas.edu/~emrah.cem)
 
