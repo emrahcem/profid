@@ -8,5 +8,11 @@ You will simply run the profid.jar file. You can either double-click the profid.
 
 ``java -jar /path/to/file/profid.jar``
 
-to run the program. Interafce consist of two sets of parameters shown as two seperate tabs: 1) Network Parameters 2) ProFID Parameters. For the detailed explanations see the Help -> How-to menu.
+to run the program.
+
+###User Interface
+=================
+Interafce consist of two sets of parameters shown as two seperate tabs: 1) Network Parameters 2) ProFID Parameters. For the detailed explanations see the *Help -> How-to* menu.
+
+![alt text](https://utdallas.edu/~emrah.cem/img/profid/profid_snapshot1.png "ProFID Interface 1")
 
