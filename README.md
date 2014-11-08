@@ -14,5 +14,5 @@ to run the program.
 =================
 Interafce consist of two sets of parameters shown as two seperate tabs: 1) Network Parameters 2) ProFID Parameters. For the detailed explanations see the *Help -> How-to* menu.
 
-![alt text](https://utdallas.edu/~emrah.cem/img/profid/profid_snapshot1.png "ProFID Interface 1")
+[![alt text](https://utdallas.edu/~emrah.cem/img/profid/profid_snapshot1.png "ProFID Interface 1")](https://utdallas.edu/~emrah.cem)
 
